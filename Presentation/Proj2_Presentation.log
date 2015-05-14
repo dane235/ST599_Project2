@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.1.29)  14 MAY 2015 15:25
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.1.29)  14 MAY 2015 15:50
 entering extended mode
 **Proj2_Presentation.tex
 
@@ -1159,17 +1159,17 @@ Overfull \hbox (9.94035pt too wide) has occurred while \output is active
 
 [7
 
-] <9moments.png, id=224, 924.0924pt x 216.81pt>
-File: 9moments.png Graphic file (type png)
- <use 9moments.png>
-Package pdftex.def Info: 9moments.png used on input line 126.
-(pdftex.def)             Requested size: 277.22986pt x 65.04349pt.
+] <submission.png, id=224, 558.888pt x 145.7445pt>
+File: submission.png Graphic file (type png)
+ <use submission.png>
+Package pdftex.def Info: submission.png used on input line 126.
+(pdftex.def)             Requested size: 167.66768pt x 43.72368pt.
 
-<20moments.png, id=226, 921.2016pt x 215.8464pt>
-File: 20moments.png Graphic file (type png)
- <use 20moments.png>
-Package pdftex.def Info: 20moments.png used on input line 126.
-(pdftex.def)             Requested size: 276.36261pt x 64.75441pt.
+<combined.png, id=226, 681.747pt x 175.857pt>
+File: combined.png Graphic file (type png)
+ <use combined.png>
+Package pdftex.def Info: combined.png used on input line 126.
+(pdftex.def)             Requested size: 170.43633pt x 43.96414pt.
 
 Overfull \hbox (71.39949pt too wide) has occurred while \output is active
  [][]  \OT1/cmss/m/n/6 ([])  
@@ -1183,19 +1183,19 @@ Overfull \hbox (9.94035pt too wide) has occurred while \output is active
 [8
 
  <C:/Users/kevar_000/Dropbox/Oregon State University/ST 599 - Big Data/ST599_Pr
-oject2/Presentation/9moments.png> <C:/Users/kevar_000/Dropbox/Oregon State Univ
-ersity/ST 599 - Big Data/ST599_Project2/Presentation/20moments.png>]
-<submission.png, id=255, 558.888pt x 145.7445pt>
-File: submission.png Graphic file (type png)
- <use submission.png>
-Package pdftex.def Info: submission.png used on input line 145.
-(pdftex.def)             Requested size: 167.66768pt x 43.72368pt.
+oject2/Presentation/submission.png> <C:/Users/kevar_000/Dropbox/Oregon State Un
+iversity/ST 599 - Big Data/ST599_Project2/Presentation/combined.png>]
+<Telly.png, id=254, 1252.1982pt x 280.4076pt>
+File: Telly.png Graphic file (type png)
+ <use Telly.png>
+Package pdftex.def Info: Telly.png used on input line 142.
+(pdftex.def)             Requested size: 250.4352pt x 56.08052pt.
 
-<combined.png, id=256, 681.747pt x 175.857pt>
-File: combined.png Graphic file (type png)
- <use combined.png>
-Package pdftex.def Info: combined.png used on input line 145.
-(pdftex.def)             Requested size: 170.43633pt x 43.96414pt.
+<Kolchak.png, id=255, 1088.3862pt x 238.0092pt>
+File: Kolchak.png Graphic file (type png)
+ <use Kolchak.png>
+Package pdftex.def Info: Kolchak.png used on input line 142.
+(pdftex.def)             Requested size: 250.32356pt x 54.74095pt.
 
 Overfull \hbox (71.39949pt too wide) has occurred while \output is active
  [][]  \OT1/cmss/m/n/6 ([])  
@@ -1209,32 +1209,6 @@ Overfull \hbox (9.94035pt too wide) has occurred while \output is active
 [9
 
  <C:/Users/kevar_000/Dropbox/Oregon State University/ST 599 - Big Data/ST599_Pr
-oject2/Presentation/submission.png> <C:/Users/kevar_000/Dropbox/Oregon State Un
-iversity/ST 599 - Big Data/ST599_Project2/Presentation/combined.png>]
-<Telly.png, id=284, 1252.1982pt x 280.4076pt>
-File: Telly.png Graphic file (type png)
- <use Telly.png>
-Package pdftex.def Info: Telly.png used on input line 161.
-(pdftex.def)             Requested size: 250.4352pt x 56.08052pt.
-
-<Kolchak.png, id=285, 1088.3862pt x 238.0092pt>
-File: Kolchak.png Graphic file (type png)
- <use Kolchak.png>
-Package pdftex.def Info: Kolchak.png used on input line 161.
-(pdftex.def)             Requested size: 250.32356pt x 54.74095pt.
-
-Overfull \hbox (71.39949pt too wide) has occurred while \output is active
- [][]  \OT1/cmss/m/n/6 ([])  
- []
-
-
-Overfull \hbox (9.94035pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[10
-
- <C:/Users/kevar_000/Dropbox/Oregon State University/ST 599 - Big Data/ST599_Pr
 oject2/Presentation/Telly.png> <C:/Users/kevar_000/Dropbox/Oregon State Univers
 ity/ST 599 - Big Data/ST599_Project2/Presentation/Kolchak.png>]
 Overfull \hbox (71.39949pt too wide) has occurred while \output is active
@@ -1246,20 +1220,20 @@ Overfull \hbox (9.94035pt too wide) has occurred while \output is active
  [][][][]  
  []
 
-Package atenddvi Info: Last page = 11.
-[11
+Package atenddvi Info: Last page = 10.
+[10
 
 ]
 \tf@nav=\write6
 \tf@toc=\write7
 \tf@snm=\write8
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 182.
-Package atveryend Info: Executing hook `AfterLastShipout' on input line 182.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 162.
+Package atveryend Info: Executing hook `AfterLastShipout' on input line 162.
 
 ("C:\Users\kevar_000\Dropbox\Oregon State University\ST 599 - Big Data\ST599_Pr
 oject2\Presentation\Proj2_Presentation.aux")
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 182.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 182.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 162.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 162.
 Package rerunfilecheck Info: File `Proj2_Presentation.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
@@ -1267,13 +1241,13 @@ Package rerunfilecheck Info: File `Proj2_Presentation.out' has not changed.
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 182.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 162.
  ) 
 Here is how much of TeX's memory you used:
- 17534 strings out of 493921
- 337021 string characters out of 3144864
+ 17520 strings out of 493921
+ 336823 string characters out of 3144864
  420650 words of memory out of 3000000
- 20371 multiletter control sequences out of 15000+200000
+ 20361 multiletter control sequences out of 15000+200000
  10746 words of font info for 39 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  56i,17n,57p,399b,574s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1287,9 +1261,9 @@ m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmssi8.pfb><C:/Program
 Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Fi
 les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files
  (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Proj2_Presentation.pdf (11 pages, 613502 bytes).
+Output written on Proj2_Presentation.pdf (10 pages, 489722 bytes).
 PDF statistics:
- 377 PDF objects out of 1000 (max. 8388607)
- 23 named destinations out of 1000 (max. 500000)
- 117 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 347 PDF objects out of 1000 (max. 8388607)
+ 21 named destinations out of 1000 (max. 500000)
+ 107 words of extra memory for PDF output out of 10000 (max. 10000000)
 
