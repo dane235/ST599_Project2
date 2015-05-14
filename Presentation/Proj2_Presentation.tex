@@ -35,7 +35,9 @@
 \begin{frame}
 \frametitle{Introduction}
 \begin{itemize}
-\item We looked at tiny little things
+\item We looked at tiny little things called Plankton
+\item These tiny little things like to float around in the sea 
+\item They also like to be eaten 
 \end{itemize}
 
 \end{frame}
@@ -43,9 +45,14 @@
 %----------------------------------
 % FRAME 4
 %----------------------------------
-
 \begin{frame}
 \frametitle{Questions of Interest}
+\begin{itemize}
+	\item Histogram v. Moments: Dawn of Justice
+	\item Is there an improvement in prediction combining these methods?
+	\item Does a change in the environment effect our predictions?
+\end{itemize}
+
 \end{frame}
 
 %----------------------------------
@@ -65,6 +72,15 @@ $\bullet$ Kratuchok moments are invariant under scaling, rotation, and translati
 %----------------------------------------------------------------
 % FRAME 5.5
 %----------------------------------------------------------------
+
+\begin{frame}
+\frametitle{Kratuchok's Moments}
+$\bullet$ The training set was further divided into a training and validation set to determine the order of moments that yielded the ``best" classification of the validation set. \\
+$\bullet$ As you can see below, it appears the $20^{st}$ moment offers the best prediction of the validation set.
+	\begin{center}
+		\includegraphics[scale=0.20]{PerfPlot.jpeg}
+	\end{center}
+\end{frame}
 
 %----------------------------------
 % FRAME 6
@@ -100,8 +116,25 @@ $\bullet$ This produces a sparse, 2048 digit feature vector for each image that 
 %----------------------------------------------------------------
 
 \begin{frame}
-	\frametitle{Kaggle Results:}
-$\bullet$ We are surprised as much as you.\\
+	\frametitle{Kaggle Results: The Native Touch}
+$\bullet$ $9^{th}$-order Krawtchouk moments produced a score of 3.68. \\
+\begin{center}
+	\includegraphics[scale=0.3]{9moments.png}
+\end{center}
+$\bullet$ $20^{th}$-order Krawtchouk moments produced a score of 3.54. \\
+\begin{center}
+	\includegraphics[scale=0.3]{20moments.png}
+\end{center}
+\end{frame}
+
+
+%----------------------------------------------------------------
+% FRAME 8.25
+%----------------------------------------------------------------
+
+\begin{frame}
+	\frametitle{Kaggle Results: Histoments}
+$\bullet$ We were fairly surprise surprised as much as you.\\
 $\bullet$ Histogram method produced a score of 3.29. \\
 \begin{center}
 	\includegraphics[scale=0.3]{submission.png}
@@ -113,13 +146,38 @@ $\bullet$ Combination of Histogram and Moments produced a score of 2.66. \\
 \end{frame}
 
 %----------------------------------------------------------------
+% FRAME 8.5
+%----------------------------------------------------------------
+
+\begin{frame}
+	\frametitle{Kaggle Results: Return to Default}
+$\bullet$ We were even more surprised with the difference in precision after setting the readJPEG argument ``native" to False. \\
+$\bullet$ Non-native Krawtchouk moments ($20^{th}$-order) produced a score of 2.18. \\
+\begin{center}
+	\includegraphics[scale=0.2]{Telly.png}
+\end{center}
+$\bullet$ Histogram and non-native Moments combo produced a score of 2.24. \\
+\begin{center}
+	\includegraphics[scale=0.23]{Kolchak.png}
+\end{center}
+\end{frame}
+
+%----------------------------------------------------------------
 % FRAME 9 
 %---------------------------------------------------------------
 
 \begin{frame}
 	\frametitle{Conclusions and Final Thoughts}
 	\begin{itemize}
-		\item Apply image processing algorithms 
+		\item Reading images into the Raster environments significantly reduces precision.
+		\item Krawtchouk moments required 400 features to achieve it's best Kaggle rank of 523/1049.
+		\item The Histogram method required only 10 features to achieve it's best Kaggle rank of 661/1049.
+	\end{itemize}
+As future work, 
+	\begin{itemize}
+		\item Perform variable selection for dimension reduction on the Krawtchouk moment.
+		\item Increase the number of bins measured in the Histogram method.
+		\item Look towards 2-D filter for additional features.
 	\end{itemize}
 \end{frame}
 
