@@ -15,42 +15,34 @@
 {Oregon State University}
 \date
 {May 15, 2014}
-\begin{document}
 
+
+\begin{document}
+\begin{frame}
+	\maketitle
+\end{frame}
 %----------------------------------
 % FRAME 2
 %----------------------------------
-\begin{frame}
-\frametitle{Outline}
-	\begin{itemize}
-	\item Brief Introduction
-	\item Feature Extraction
-	\item Classification Models: Random Forest \& kNN 
-	\item Conclusion and Final Thoughts
-	\end{itemize}
-\end{frame}
+%\begin{frame}
+%\frametitle{Outline}
+%	\begin{itemize}
+%	\item Question of Interest
+%	\item Feature Extraction
+%	\item Classification Models: Random Forest \& kNN 
+%	\item Conclusion and Final Thoughts
+%	\end{itemize}
+%\end{frame}
+
 %----------------------------------
 % FRAME 3
 %----------------------------------
-\begin{frame}
-\frametitle{Introduction}
-\begin{itemize}
-\item We looked at tiny little things called Plankton
-\item These tiny little things like to float around in the sea 
-\item They also like to be eaten 
-\end{itemize}
 
-\end{frame}
-
-%----------------------------------
-% FRAME 4
-%----------------------------------
 \begin{frame}
 \frametitle{Questions of Interest}
 \begin{itemize}
-	\item Histogram v. Moments: Dawn of Justice
-	\item Is there an improvement in prediction combining these methods?
-	\item Does a change in the environment effect our predictions?
+	\item Using Histogram and Moments as a image feature extraction how accurate are the classification of plankton?
+%	\item Does a change in the environment effect our predictions?
 \end{itemize}
 
 \end{frame}
@@ -107,8 +99,13 @@ $\bullet$ Some of species of plankton give distinct distributions of gray scale 
 % FRAME 7
 %----------------------------------
 \begin{frame}
-\frametitle{Indicio Package and kNN}
-$\bullet$ This produces a sparse, 2048 digit feature vector for each image that can then be used to calculate the Euclidean distances between different feature vectors
+	\frametitle{Indicoio Package and kNN}
+$\bullet$ This produces a sparse, 2048 digit feature vector for each image that can then be used to calculate the Euclidean distances between different feature vectors.\vskip 12pt
+
+$\bullet$ The data extracted from Indicoio was too "noisy" for kNN to make any accurate classifications and the large number of classes made it difficult for computation time. \vskip 12pt
+
+$\bullet$ The kaggle score was 8.1 ($\sim$1001 ranking).
+
 \end{frame}
 
 %----------------------------------------------------------------
@@ -116,7 +113,7 @@ $\bullet$ This produces a sparse, 2048 digit feature vector for each image that 
 %----------------------------------------------------------------
 
 \begin{frame}
-	\frametitle{Kaggle Results: The Native Touch}
+	\frametitle{Kaggle Results:}
 $\bullet$ $9^{th}$-order Krawtchouk moments produced a score of 3.68. \\
 \begin{center}
 	\includegraphics[scale=0.3]{9moments.png}
@@ -125,7 +122,9 @@ $\bullet$ $20^{th}$-order Krawtchouk moments produced a score of 3.54. \\
 \begin{center}
 	\includegraphics[scale=0.3]{20moments.png}
 \end{center}
+
 \end{frame}
+
 
 
 %----------------------------------------------------------------
@@ -133,7 +132,7 @@ $\bullet$ $20^{th}$-order Krawtchouk moments produced a score of 3.54. \\
 %----------------------------------------------------------------
 
 \begin{frame}
-	\frametitle{Kaggle Results: Histoments}
+	\frametitle{Kaggle Results: Histogram \& Momements}
 $\bullet$ We were fairly surprise surprised as much as you.\\
 $\bullet$ Histogram method produced a score of 3.29. \\
 \begin{center}
@@ -150,13 +149,12 @@ $\bullet$ Combination of Histogram and Moments produced a score of 2.66. \\
 %----------------------------------------------------------------
 
 \begin{frame}
-	\frametitle{Kaggle Results: Return to Default}
-$\bullet$ We were even more surprised with the difference in precision after setting the readJPEG argument ``native" to False. \\
-$\bullet$ Non-native Krawtchouk moments ($20^{th}$-order) produced a score of 2.18. \\
+	\frametitle{Kaggle Results:}
+$\bullet$ Krawtchouk moments ($20^{th}$-order) produced a score of 2.18. \\
 \begin{center}
 	\includegraphics[scale=0.2]{Telly.png}
 \end{center}
-$\bullet$ Histogram and non-native Moments combo produced a score of 2.24. \\
+$\bullet$ Histogram and Moments combo produced a score of 2.24. \\
 \begin{center}
 	\includegraphics[scale=0.23]{Kolchak.png}
 \end{center}
@@ -175,11 +173,10 @@ $\bullet$ Histogram and non-native Moments combo produced a score of 2.24. \\
 	\end{itemize}
 As future work, 
 	\begin{itemize}
-		\item Perform variable selection for dimension reduction on the Krawtchouk moment.
+		\item Perform variable selection for dimension reduction on the Krawtchouk moments.
 		\item Increase the number of bins measured in the Histogram method.
 		\item Look towards 2-D filter for additional features.
 	\end{itemize}
 \end{frame}
-
 
 \end{document}
