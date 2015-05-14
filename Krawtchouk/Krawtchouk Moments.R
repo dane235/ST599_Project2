@@ -15,14 +15,14 @@ response = NULL
 for(i in 1:length(train.class.folders)) {
   setwd(paste("/Users/nicholashockensmith/Desktop/Big Data/Project 2/train/", train.class.folders[i], sep = ""))
   data.file.names = list.files()
-  train.data = c(train.data, sapply(data.file.names, function(x) {readJPEG(x, native=T)}))
+  train.data = c(train.data, sapply(data.file.names, function(x) {readJPEG(x, native=F)}))
   response = c(response, rep(train.class.folders[i], length(data.file.names)))
 }
 
 ### Calculates Image Moments via the IM package
 ## See http://cran.r-project.org/web/packages/IM/IM.pdf for 
 ## alternative moment kernels! 
-N<-9
+N<-10
 train.moment = matrix(NA,N*N,length(train.data))
 for(i in 1:length(train.data)) { 
 #   #--- Zeros and Ones ---#
@@ -31,7 +31,10 @@ for(i in 1:length(train.data)) {
 #   temp.train[temp.train>1]<-1
 #   train.moment[,i] = as.vector(momentObj(temp.train, type="krawt", order=N+1, 0.5)@moments[1:N,1:N])
   #--- Training Set ---#
-  train.moment[,i] = as.vector(momentObj(log(-1*train.data[[i]][]), type="krawt", order=N+1, 0.5)@moments[1:N,1:N])
+#   #---- Native set to True!
+#   train.moment[,i] = as.vector(momentObj(log(-1*train.data[[i]][]), type="krawt", order=N+1, 0.5)@moments[1:N,1:N])
+  #---- Native set to False!
+  train.moment[,i] = as.vector(momentObj(train.data[[i]][], type="krawt", order=N, 0.5)@moments[1:N,1:N])
 }
 train.moment <- t(train.moment)
 dim(train.moment)
@@ -39,11 +42,14 @@ dim(train.moment)
 setwd("/Users/nicholashockensmith/Desktop/Big Data/Project 2/test")
 test.data = NULL
 data.file.names.test = list.files()
-test.data = sapply(data.file.names.test, function(x) {readJPEG(x, native=T)})
+test.data = sapply(data.file.names.test, function(x) {readJPEG(x, native=F)})
 #-- ii. More Image Moments via the IM package
 test.moment = matrix(NA,N*N,length(test.data))
 for(i in 1:length(test.data)) { 
-  test.moment[,i] = as.vector(momentObj(log(-1*test.data[[i]][]), type="krawt", order=N+1, 0.5)@moments[1:N,1:N])
+  #   #---- Native set to True!
+  #   test.moment[,i] = as.vector(momentObj(log(-1*train.data[[i]][]), type="krawt", order=N+1, 0.5)@moments[1:N,1:N])
+  #---- Native set to False!
+  test.moment[,i] = as.vector(momentObj(test.data[[i]][], type="krawt", order=N, 0.5)@moments[1:N,1:N])
 }
 test.moment<-t(test.moment)
 dim(test.moment)
@@ -82,18 +88,17 @@ if(k==1){
   tabby.krawt<-table(observed=r.v,predicted=pred.krawt.rf.p)
   sum(diag(tabby.krawt))/sum(tabby.krawt)
   ## 3. Write test .CSV file for Kaggle Submission
-  setwd("/Users/nicholashockensmith/Desktop/Big Data/Project 2")
-  write.csv(cbind(r.v,predict(krawt.rf.p,newdata=t.v,type="prob")),file="krawt.rf.p.csv")
+  #setwd("/Users/nicholashockensmith/Desktop/Big Data/Project 2")
+  #write.csv(cbind(r.v,predict(krawt.rf.p,newdata=t.v,type="prob")),file="krawt.rf.p.csv")
   }else{
     # Naive Bayes #
     nbay<-NaiveBayes(t.t,as.factor(r.t))
     ## 2b. Correct Classification from Prediction Function
     pred.nbay<-predict(nbay,newdata=t.v)
     ## 3. Write test .CSV file for Kaggle Submission
-    setwd("/Users/nicholashockensmith/Desktop/Big Data/Project 2")
-    write.csv(pred.nbay,file="nbay.csv")   
+    #setwd("/Users/nicholashockensmith/Desktop/Big Data/Project 2")
+    #write.csv(pred.nbay,file="nbay.csv")   
   }
-}
 ################################################################
 
 
@@ -105,17 +110,17 @@ setwd("/Users/nicholashockensmith/Desktop/Big Data/Project 2")
 #--- k=1: Random Forest
 #--- k=2: Naive Bayes
 #--- k=3: Combined Features
-k=3
-if(k==1){
+j=3
+if(j==1){
   ## 1a. Random Forest on Whole Data Set
   krawt.rf<-randomForest(x=train.moment,y=as.factor(response),ntree=500)
   ## 1b. Correct Classification/ Confusion Matrix/ OOB
   confucius<-krawt.rf$confusion
   sum(diag(confucius))/sum(confucius)
   ## 2. Write the prediction model to .CSV 3. Write test .CSV file for Kaggle Submission
-  write.csv(cbind(data.file.names.test,predict(krawt.rf,newdata=test.moment,type="prob")),file="KaggleSubmissionKrawtchoukFire21.csv")
+  write.csv(cbind(data.file.names.test,predict(krawt.rf,newdata=test.moment,type="prob")),file="KaggleSubmissionKrawtchoukKojack.csv")
   }else{
-    if(k==2){
+    if(j==2){
       ## 1. Naive Bayes on Whole Data Set
       krawt.nbay<-NaiveBayes(train.moment,as.factor(response))
       ## 2. Write the prediction model to .CSV 3. Write test .CSV file for Kaggle Submission
@@ -127,7 +132,7 @@ if(k==1){
       confucius<-krawt.rf$confusion
       sum(diag(confucius))/sum(confucius)
       ## 2. Write the prediction model to .CSV 3. Write test .CSV file for Kaggle Submission
-      write.csv(cbind(data.file.names.test,predict(krawt.rf,newdata=ardvark.test,type="prob")),file="KaggleSubmissionArdvarkFire21.csv")   
+      write.csv(cbind(data.file.names.test,predict(krawt.rf,newdata=ardvark.test,type="prob")),file="KaggleSubmissionArdvarkKojack.csv")   
     }
 }
 
